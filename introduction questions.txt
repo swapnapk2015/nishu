@@ -1,0 +1,141 @@
+QQ:Hello, am I speaking with Nishanth ?
+
+Yes,please tell me.
+
+QQ: We are calling from abc company, we are looking for Big data professional, if you interested we will process your profile.
+or 
+if you are looking for job/opportunity let me know.
+
+Yes , I am looking for the opportunity.
+
+QQ:How many years of experience do you have in total.
+
+Total I have 3 years of IT experience.
+
+QQ:How many years of experience in Big data technologies?
+
+3 years.
+QQ: What are the Big data technologies that you have experience?
+
+Spark with Scala, Hive, Sqoop,oozie,MS SQL,Cloudera distribution and little bit exposure on AWS services like Athena, Glue and Dynamo DB.
+
+QQ:How many years of experience you have in Spark.
+Yes, I do have experience in spark with scala.(3.3 years)
+
+QQ:How many years of experience you have in Hive?
+
+Yes,  I do have (3 years)
+
+QQ:How many years of experience you have in Scala?
+
+Yes, I do have experience in Scala with Spark. 3 years
+
+QQ: Currently in which organization you are working?
+
+I am currently working for the societe generale(Banglore)
+I am working for MILLENIUM INTECH PRIVATE LIMITED
+
+QQ:Where it is located (MILLENIUM INTECH PRIVATE LIMITED Pvt Ltd)?
+It is in Chennai.(LS Squire, First Floor,
+77, Velachery Road, Little Mount,
+Saidapet, Chennai-600015.)
+
+QQ:Do you have PF and Form 16 ?
+Yes.I do have.
+
+QQ: Since how long you been with Astra Infotech?
+it's been 3 years working for the same company.
+
+QQ: Why are you looking for change?
+looking for better opportunities.
+--
+ I have been at the same job for 3 years.
+ In the current environment,i feel its time for me to move on and find a new/better opportunity that will offer me a 
+ better salary along with the opportunties.
+
+QQ:What is your CTC?
+
+7.5LPA
+
+QQ:What is your monthly take home?
+
+around 55K per month
+
+QQ: What is your expectations from us?
+
+I am expecting 15LPA.
+
+---if they ask for any negotiation(It can be negotiable upto 14LPA.)
+
+QQ: What is your notice period?
+Officially it is 30 days and it can negotiable up to 15 days.
+
+QQ: Are you sure, you can negotiate your notice period to 15 days/
+or
+Are you sure , you can join in 15 days if everything goes well?
+
+Yes, I already informed my manager.
+If I get any offer he can release me in 15 days, as currently I am on bench.
+
+QQ: Have you already resigned from your company?
+
+No, i have not put down my papers yet, but discussed with my manager.
+He is OKay to release me in 15 days, if I get an offer.
+
+QQ: Can you brief me about your roles and responsibilities in your current project?
+
+As a spark Scala developer I involved in developing the spark frame work for data validation, data ingestion and data transformations.
+We do have production cluster we will be monitoring the spark applications and fix the issues if there are any.
+We do get Jira tasks, which may include bug fixes, code optimizations and data validation, if there are any new enhancement activity we need to pick them up.
+
+QQ: Which IDE you are using?
+Eclipse, I also has some exposure on IntelliJ.
+QQ: What is the build tool you are using?
+
+Maven.
+
+QQ: What is the version control/code repository you are using?
+GitHub
+
+QQ: Do you have experience in Agile methodology or waterfall?
+I have experience in Agile development.
+
+QQ: Do you know CICD(Continuous Integration and Continuous Development) process?
+Yes, i do. We.We are using Jenkins.
+QQ: Do you have experience in Jenkins?
+
+I do not have experience on it, but have some sort of knowledge on it.
+How it builds the jar and deploys the code to respective environments.
+
+QQ: Do we need install spark on all the nodes in the Hadoop Cluster?
+No, we do not need to install the Spark on all the nodes, while the Spark application launches the respective libraries will get copied in to all the nodes 
+and once the job is complete, it removes all the libraries.
+
+QQ: What is partitioning and Bucketing in Hive?
+Partitioning is nothing but, segregating the data on some key column values, so that data will be organized in respective folder, which will increase the 
+query performance.
+Bucketing is also helps in improving the query performance, which internally segregate the data based on key column values and store the data in Hash format values.
+
+QQ:How many types of table we have in Hive?
+There are two types of tables available in Hive,
+Managed/Internal table and External Table.
+In Managed/Internal table we will be having complete control over the data as well as schema, if we drop the table, the table schema and data will be deleted.
+Whare as in External table we will having control over schema but not on the data, if we drop the table, schema gets deleted but not the data, it will be available at
+the specified location.
+
+INFO: Below are the versions, do remember:
+
+
+Spark - 2.4
+Scala-2.11
+Hive-2.3.2
+Sqoop - 1.4
+Oozie - 4
+Cloudera - 6.x
+
+
+
+
+
+
+

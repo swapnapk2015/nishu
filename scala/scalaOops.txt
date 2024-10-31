@@ -1,0 +1,348 @@
+--------- OOPS IN SCALA --------------
+Scala Object and Class
+Unlike java, scala is a pure object oriented programming language. It allows us to create object and class so that you can develop object oriented applications.
+
+Object: Object in scala is an instance of class.
+Object is a real world entity. It contains identity, state and behavior. Laptop, car, cell phone are the real world objects. Object typically has two characteristics:
+ consider dog as an object it has identity state and behaviour.
+1) Identity:(Name of the Dog)
+1) State: Breed,age,colour
+2) Behavior: functionality ; i.e: barks,eats,shout,sleep
+
+CLASS: Class is a template or a blueprint. It is also known as collection of objects of similar type.
+
+Scala Anonymous object
+In scala, you can create anonymous object. An object which has no reference name is called anonymous object.
+ It is good to create anonymous object when you don't want to reuse it further.
+
+Scala Anonymous object Example:
+
+class A {
+  var a1: Int = 10
+  var b1: Int = 20
+
+  def m1(): Unit = {
+    println(a1)
+    println(b1)
+  }
+}
+
+object Test {
+  def main(args: Array[String]): Unit = {
+    new A().m1()  // we can the object directly(instead of using reference) i.e. anonymous object
+  }
+}
+
+
+
+** Constructors
+A constructor is a method  which has the same name as the className.
+
+2 types: 1) primary constructor 2) Auxillary constructor
+
+
+** this can be used in 
+if the method/function parameters and instance variables(varaibles declared in class) are same, then we can differentiate by using this Keyword.
+** This can be used for instance variables.
+
+Scala Default Primary Constructor
+In scala, if we don't specify primary constructor, compiler creates a constructor which is known as primary constructor.
+ All the statements of class body treated as part of constructor. It is also known as default constructor.
+ 
+ Scala Primary Constructor
+
+Scala provides a concept of primary constructor with the definition of class. 
+You don't need to define explicitly constructor if your code has only one constructor. 
+It helps to optimize code. You can create primary constructor with zero or more parameters.
+
+Scala Auxillory constructors
+----------------------------
+Scala Secondary (auxiliary) Constructor
+You can create any number of auxiliary constructors in a class. You must call primary constructor from inside the auxiliary constructor.
+ this keyword is used to call constructor from other constructor. When calling other constructor make it first line in your constructor.
+ 
+ --- CASE CLASS --------------
+ Scala case classes are just regular classes which are immutable by default and decomposable through pattern matching.
+
+It uses equal method to compare instance structurally.
+** It does not use new keyword to instantiate object.
+All the parameters listed in the case class are public and immutable by default.
+
+Syntax
+case class className(parameters) 
+
+1) It is very much useful to convert an unstructured data to structured form.
+2)case class is very much useful in comparing data . i.e. pattern Matching
+3) we can compare the structure of 2 objects with the case classes.
+EXample:
+case class CaseClass(a:Int, b:Int)  
+  
+object MainObject{  
+    def main(args:Array[String]){  
+        var c =  CaseClass(10,10)       // Creating object of case class i.e. without new keyword we can the instance of the class. 
+        println("a = "+c.a)               // Accessing elements of case class  
+        println("b = "+c.b)  
+    }  
+}  
+ 
+ ** Case class ==  performs structural comparision of objects not reference.
+if we print the reference of case class object we get Object as output not reference.
+As case class immutable,if we create multiple objects with values them only copy of object is created and the address is shared to all the reference as explained in the program.
+
+
+** Normal class == performs reference comparision 
+if we print the reference of a normal class object we get hashcode(address) as output not object
+In case of normal classes for each object declartion one object is created in memory with different address.
+
+example:
+var c1=C(1,2)
+     var c2=C(1,2)
+     var c3=C(1,2)
+     var c4=C(1,2)   //case class
+   
+     println(c1)
+     println(c2)
+     println(c3)
+  
+     println(c1==c2)    // case class we will get output true.
+         
+
+    var b1=new B(1,2)
+     var b2=new B(1,2)   // Normal class i.e ..., object can be created with new keyword
+     
+     println(b1)
+     println(b2)
+     
+     println(b1==b2)   // we will get the output False.
+     
+ 
+ 
+ 
+
+*** scala singleton Object:
+Singleton object is an object which is declared by using object keyword instead by class. No object is required to call methods declared inside singleton object.
+
+In scala, there is no static concept. So scala creates a singleton object to provide entry point for your program execution.
+If you don't create singleton object, your code will compile successfully but will not produce any output.
+ Methods declared inside Singleton Object are accessible globally.
+ A singleton object can extend classes and traits.
+ 
+ How to call members of Singleton object
+----------------------------------------
+objectname.variablename
+ex:
+Test.a
+
+objectname.methodname()
+ex:
+Test.m1()
+
+
+Scala Companion Object
+In scala, when you have a class with same name as singleton object, it is called companion class and the singleton object is called companion object.
+
+
+
+--------  Scala Inheritence ----------------------
+
+Deriving properties of Parent/super/Base class to child/sub/derived class.
+You can achieve inheritance by using extends keyword. i.e. A subclass inherits a superClass using extends keyword.
+To achieve inheritance a class must extend to other class. 
+ which is used to reusability of code (or) to avoid code redundancy.
+ A class which is extended called super or parent class. a class which extends class is called derived or base class.
+
+**we declare all common properties of subclasses in common class called as parent class.
+classes at bottom level --->subclass    classes at top level are --------> SuperClass
+
+Types of Inheritence:
+types of inheritance including single level inheritance,
+ multilevel inheritance,
+ hierarchal inheritance,
+ multiple, and hybrid. 
+ You can use single, multilevel and hierarchal in your class. Multiple and hybrid can only be achieved by using traits. 
+ 
+ SINGLE LEVEL INHERITANCE-----The process of deriving the members from one super class to one sub class is known as Single level inheritance.
+ MULTI LEVEL INHERITANCE-----When there is a chain of inheritance, it is known as multilevel inheritance. (Many to one)
+ HIERARCHIAL INHERITANCE-----Deriving 2 or more sub classes from a Parent class. (One to many)
+** for all child classes,there will be one parent class
+
+** Scala does not support Multiple Inheritance with classes.However,we can implement multiple inheritance with the traits.
+
+---------- POLYMORPHISM ----------------
+Poly---> Many , Morphism ----> forms
+Same method represented in many forms is known as Polymorphism.
+
+
+Method Binding : The process of mapping a method call to its appropriate method is called Method binding.
+
+example:
+def m1(a:Int,b:Int):Unit={
+
+}
+
+m1()                          // calling a method 
+m1(1,2)
+m1(3,4,3)
+
+
+Compile Time polymorphism(Method Overloading):
+definition:If method binding happens at the time of compiling a program is known as Compile Time Polymorphism.
+
+Method Overloading: Declaring a method with Same name but with different parameters .
+1)Either the datatype of parameter should change from one method to another method
+2)Either number of parameters should change.
+
+Runtime Polymorphism/Dynamic binding/Dynamic Method dispatch  (Method OverRiding)
+If method binding happens at the time of executing a program is known as RTP.
+
+Method OverRiding:  When a subclass has the same name method as defined in the parent class, it is known as method overriding.
+When subclass wants to provide a specific implementation for the method defined in the parent class, it overrides method from parent class.
+In scala, you must use either override keyword or override annotation to override methods from pa
+Overridng happens between parent and child class.We can override methods and variables.
+
+-- Declaring method of parent class in child class with same signature but with different implementation.
+-- If we are not satisfied with the implementation of parent class method,we override it in subclass with current requirement.
+
+
+Example 1:
+
+class Vehicle{  
+    def run(){  
+        println("vehicle is running")  
+    }  
+}  
+  
+class Bike extends Vehicle{  
+     override def run(){  
+        println("Bike is running")  
+    }  
+}  
+  
+object MainObject{  
+    def main(args:Array[String]){  
+        var b = new Bike()  
+        b.run()  
+    }  
+}    // o/p: Bike is running
+
+---------- FIELD OVERRIDING --------------
+Field Overriding: Overriding fields/variables is applicable only for immutable or for val type  but not var.
+Using below examples we will get an idea:
+
+Example:1                                   Example:2                                    Example:3                                           Example:4
+class Vehicle{                              class vehicle{                              class vehicle{                                          class vehicle
+    var speed:Int = 60                      val speed:Int = 60                          var speed:Int = 60                                   val speed:Int = 60
+}                                            }                                                }                                                 }
+class Bike extends Vehicle{               class Bike extends Vehicle{                    class Bike extends Vehicle{                        class Bike extends Vehicle{
+   var speed:Int = 100                    override val speed:Int = 100                   override  var speed:Int = 100                          override var speed:Int = 100
+    def show(){                           def show(){                                       def show(){                                     def show(){ 
+        println(speed)                    println(speed)                                     println(speed)                                     println(speed)
+    }                                     }                                               }                                                   }
+}                                            }                                               }                                                }
+object MainObject{                           object MainObject{                          object MainObject{                                object MainObject{ 
+    def main(args:Array[String]){            def main(args:Array[String]){              def main(args:Array[String]){                        def main(args:Array[String]){
+        var b = new Bike()                   var b = new Bike()                         var b = new Bike()                                   var b = new Bike()  
+         b.show()                               b.show()                                   b.show()                                          b.show()  
+    }                                            }                                            }                                               }
+}                                                  }                                       }                                                    }
+
+o/p for example 1:: Error - variable speed needs 'override' modifier
+o/p for example 2: 100
+o/p for example 3:  variable speed cannot override a mutable variable
+o/p for example 4:  variable speed needs to be a stable, immutable value
+
+
+-- super Keyword: A super keyword is used to access super class method from  a sub class.
+** Super keyword is not applicable with variables in Scala.
+** We cannot use super keyword to access super variable in subclass when we go overriding variables.However we can apply it with methods.
+
+Example:
+/overriding
+class A1 {
+  def marraige(): Unit = {
+    println("Subba Lakshmi")
+  }
+}
+class B1 extends A1 {
+  override def marraige(): Unit = {
+    super.marraige()
+    println("Jessy")
+  }
+}
+object Test {
+  def main(args: Array[String]): Unit = {
+    var b = new B1()
+    b.marraige()
+  }
+}
+// we will get both subbalakshmi and jessy as the outputs by using the super Keyword with method.
+
+
+--- Final Keyword: Final is a keyword, which is used to prevent inheritance of super class members into derived class. 
+You can declare final variables, methods and classes also.
+
+Final Variables:Final variables cannot be overridden.               
+Final Methods: It cannot be overridden.          
+Final Class: Final Class cannot be inherited.
+
+ --- Abstract Class -----------------
+ Abstract Class: A class which is declared with abstract keyword is known as abstract class.
+ An abstract class can have abstract methods and non-abstract methods as well.
+ Abstract class is used to achieve abstraction.
+ Abstraction is a process in which we hide complex implementation details and show only functionality to the user.
+ 
+ ** We must override all abstract method of an abstract class in its immediate subclass otherwsie even the sub class has to be declared as abstract.
+ ie..  we must have to define a abstract method body i.e.. { } in the extended class(sub class) with same method name.(i.e.. overriden)
+ Abstract Method: The method without body.
+ 
+ ** Abstract Class can be instanstiated.(cannot creates object)
+ *** We declare an abstract class with parameterized constructor,Then the sub class constructor will invoke/call constructor of abstract class.
+ Ex:abstract class A1(a: Int, b: Int) {} // abstract class having parameters a and b1 
+    class B1( a: Int, b: Int) extends A1(a: Int, b: Int) {}  // subclass will also have same parameters or else we will get errors.
+	Additionally ,we can pass extra parameters also i.e.. class B1(c: Int, name: String, a: Int, b: Int) extends A1(a: Int, b: Int) {}
+
+
+------------------  SCALA TRAITS -----------------------------------------------------
+Traits: In scala, trait is a collection of abstract and non-abstract methods.You can create trait that can have all abstract methods or some abstract and some non-abstract methods.
+
+** A trait is similar to interfaces in java.
+   We use keyword trait to declare trait's in Scala.We use extends to inherit a trait to a class.
+** A can have both concrete and abstract methods in a trait.
+** We override abstract methods of trait in subclass otherwise subclass must be declared abstract.
+** We cannot instantiate traits(No objects).
+Syntax:  trait Trait_Name{
+         // Fields..
+         // Methods..
+           }
+--- we cannot declare a trait with parameterized constructor.i.e  trait Nishanth{} (Right) ......, trait Nishanth(a:Int){}-----(Wrong)
+We can implement multiple inheritance with trait's.
+
+**********(v.imp)
+If a class implements multiple traits, it will extend the first trait, class, abstract class. with keyword is used to extend rest of the traits.
+i.e.. class Ab extends A with B with CASE{}  ex:2  class AB extends A with B{}
+
+---------- Scala Traits Mixins ------------
+Traits Mixins: n scala, trait mixins means you can extend any number of traits with a class or abstract class.
+ You can extend only traits or combination of traits and class or traits and abstract class.
+
+** It is necessary to maintain order of mixins otherwise compiler throws an error.
+
+** The right mixins order of trait is that any class or abstract class which you want to extend, first extend this.
+    All the traits will be extended after this class or abstract class. ORDER --->First one is abstract class ,second one is trait
+	
+
+
+
+
+
+*** Access Modifiers
+
+In scala there are 3 access Modifiers:
+Private:if we declare a member as private,we can access such member only within a class and we cannot access them outside a class.
+It can be declared with varaibles,class,methods,constructors
+
+public: public members have universal access,any where in same package and also other packages.
+public can be accessed anywhere
+
+protected--A protected member is accessible anywhere in the same class and only in subclasses of same package and other packages.
+protected can be used with variables,class,methods,constructors

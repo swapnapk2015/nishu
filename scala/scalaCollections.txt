@@ -1,0 +1,85 @@
+------ FUNCTIONS IN SCALA -----------
+A function is a group of statements that perform a task.
+You can create function by using def keyword. 
+
+Scala Function Declaration Syntax:
+
+def functionName(parameters : typeofparameters) : returntypeoffunction = {  
+// statements to be executed  
+}  
+
+You must mention return type of parameters while defining function and return type of a function is optional.
+ If you don't specify return type of a function, default return type is Unit.
+ ** You can create function with or without = (equal) operator. If you use it, function will return value.
+ **  If you don't use it, your function will not return anything and will work like subroutine.
+ **--- Scala Function  without using = Operator ,The function defined below is also known as non parameterized function.
+ Ex: def functionExample(){}
+ --- Scala Function with = Operator
+ Ex: def functionExample() = { }
+ ---Scala Parameterized Function :
+when using parameterized function you must mention type of parameters explicitly otherwise compiler throws an error and your code fails to compile.
+ Ex: def functionExample(a:Int, b:Int) = {  
+          var c = a+b  
+          println(c)  
+    }  
+--- Function Parameter with Default Value
+Scala provides a feature to assign default values to function parameters.
+ It helps in the scenario when you don't pass value during function calling. It uses default values of parameters.
+ Ex: def functionExample(a:Int = 0, b:Int = 0):Int = {   // Parameters with default values as 0  
+        a+b  
+    }  
+
+ 
+ 
+ Higher Order Functions:
+ Higher order function is a function that either takes a function as argument or returns a function.
+ Partially Applied Functions:
+ The Partially applied functions are the functions which are not applied on all the arguments defined by the stated function
+ i.e, while invoking a function, we can supply some of the arguments and the left arguments are supplied when required
+ 
+ -------------  COLLECTONS -------------------------------------------------------------------------------------------------------------------------------------
+ Scala provides rich set of collection library. It contains classes and traits to collect data. These collections can be mutable or immutable. 
+ 
+ -------Strings---------
+ Strings: In scala, string is a combination of characters or we can say it is a sequence of characters.
+ 
+ --------Arrays---------
+ Arrays: Array is a collection of mutable values. It is an index based data structure which starts from 0 index to n-1 where n is length of array.
+ Syntax for creating Array:
+ 
+var arrayName : Array[arrayType] = new Array[arrayType](arraySize);   or  
+var arrayName = new Array[arrayType](arraySize)  or  
+
+EX: var arr = new Array[Int](5)   
+      var arr1 = Array(1,2,3,4,5) 
+
+----------Lists-----------
+Lists: List is used to store ordered elements. 
+Ex:  var list = List(1,8,5,6,9,58,23,15,4)  
+        var list2 = List(88,100)  
+
+----------- Sets-----------
+Sets:It is used to store unique elements in the set. It does not maintain any order for storing elements.
+Ex: val games = Set("Cricket","Football","Hocky","Golf")  
+            val alphabet = Set("A","B","C","D","E")   
+
+-------------Map -------------------
+Map:Map is used to store elements. It stores elements in pairs of key and values. 
+In scala, you can create map by using two ways either by using comma separated pairs or by using rocket operator.
+
+EX: var map = Map(("A","Apple"),("B","Ball"))  
+        var map2 = Map("A"->"Aple","B"->"Ball")  
+		
+---------- Tuples-------------------
+Tuples: A tuple is a collection of elements in ordered form.
+ If there is no element present, it is called empty tuple.
+***  You can use tuple to store any type of data.
+*** You can store similar type or mix type data also. 
+*** You can use it to return multiple values from a function
+
+Ex: var tuple2 = ("Apple","Banana","Gavava")        // Tuple of string values  
+        var tuple3 = (2.5,8.4,10.50)                // Tuple of float values  
+        var tuple4 = (1,2.5,"India")                // Tuple of mix type values  
+		
+
+		
